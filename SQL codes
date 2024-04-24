@@ -1,0 +1,75 @@
+SQL code used
+Here I gathered some of my SQL codes I used to do data analysis, clearning and exploration.
+
+1. This SQL query is used to do inner join between 3 tables, using id order and id store:
+SELECT
+    od.id_order
+    , od.id_store
+    , od.id_table
+    , od.id_waiter
+    , od.id_device
+    , od.date_opened AS `Table open date`
+    , od.date_closed AS `Table closed date`
+    , od.dim_source AS `device used`
+    , od.m_nb_customer AS `number of customers`
+    , od.m_cached_payed AS `Price paid`
+    , od.m_cached_price AS `Price to pay`
+    , ol.date_opended AS `Date item ordered`
+    , ol.date_created AS `Date item saved`
+    , ol.m_quantity AS `Quantity`
+    , ol.m_total_price_inc_vat AS `Total price inc VAT`
+    , ol.m_discount_amount AS `Discount amount`
+    , ol.dim_status AS `item status`
+    , ol.dim_feature_type AS `Item type`
+    , ol.dim_name_translated AS `Item name`
+    , ol.dim_category_translated AS `Category`
+    , pd.dim_type AS `Payment type`
+    , pd.m_amount AS `Payment amount`
+    , sd.id_store
+    , sd.dim_zipcode AS `zipcode`
+FROM
+    `data-analytics-bootcamp-363212.tiller.order_data` od
+JOIN
+    `data-analytics-bootcamp-363212.tiller.order_line` ol ON od.id_order = ol.id_order
+JOIN
+    `data-analytics-bootcamp-363212.tiller.payment_data` pd ON od.id_order = pd.id_order
+JOIN
+    `data-analytics-bootcamp-363212.tiller.store_data` sd ON od.id_store = sd.id_store
+
+2. This SQL code used to clean and adjust coloumn names according to their functions
+
+SELECT
+date_created AS `Saved item`
+, date_opended AS `Ordered item`
+, m_quantity AS `Quantity`
+, m_total_price_inc_vat AS `Total price inc vat`
+, m_discount_amount AS `Discount amount`
+, dim_type AS `Type`
+, dim_category AS `Category`
+, dim_name AS `Item name`
+, dim_status AS `Item status`
+ FROM `data-analytics-bootcamp-363212.tiller.order_line`
+
+3. This SQL used to calculate the amount and order it descending order
+
+SELECT id_pay, SUM(m_amount) AS total_amount
+FROM `data-analytics-bootcamp-363212.tiller.payment_data`
+GROUP BY id_pay
+ORDER BY total_amount DESC;
+
+4. This SQL code is used to create paired items purchased together
+
+SELECT
+  a.dim_name_translated AS product1,
+  b.dim_name_translated AS product2,
+  COUNT(*) AS pair_count
+FROM
+  `data-analytics-bootcamp-363212.tiller.order_line` a
+JOIN
+  `data-analytics-bootcamp-363212.tiller.order_line` b
+ON
+  a.id_order = b.id_order AND a.dim_name_translated != b.dim_name_translated
+GROUP BY
+  product1, product2
+ORDER BY
+  pair_count DESC;
