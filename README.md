@@ -66,7 +66,8 @@ To clean the data we performed the following tasks:
  - [Click here to see the Python codes]()
 
 Some of SQL codes used:
-```SELECT
+```SQL
+SELECT
     CASE
         WHEN date_opened BETWEEN "2015-01-01" AND "2015-12-31" THEN "2015-01-01"
         WHEN date_opened BETWEEN "2016-01-01" AND "2016-12-31" THEN "2016-01-01"
