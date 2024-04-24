@@ -62,7 +62,7 @@ To clean the data we performed the following tasks:
 - When higher the average price in the store bigger the turnover
 
 ### [Data Analysis]()
- - [Click here to see the SQL codes]()
+ - [Click here to see the SQL codes](https://github.com/Danieltadele777/Restaurant-360--food-chain/blob/main/SQL%20codes)
  - [Click here to see the Python codes]()
 
 Some of SQL codes used:
