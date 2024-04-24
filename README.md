@@ -75,10 +75,10 @@ Some of SQL codes used:
         WHEN date_opened BETWEEN "2019-01-01" AND "2019-12-31" THEN "2019-01-01"
         WHEN date_opened BETWEEN "2020-01-01" AND "2020-12-31" THEN "2020-01-01"
         ELSE "2020-01-01"
-    END AS date_corrected,
-    SUM(m_cached_payed) AS total_payed,
-    SUM(customer) AS total_customers,
-    ROUND(SUM(m_cached_payed) / NULLIF(SUM(customer), 0), 2) AS ticket_medium
+    END AS date_corrected
+    , SUM(m_cached_payed) AS total_payed
+    , SUM(customer) AS total_customers
+    , ROUND(SUM(m_cached_payed) / NULLIF(SUM(customer), 0), 2) AS ticket_medium
 FROM `avid-infinity-402410.Tiller_by_sumup.JOIN_payment_orderdata`
 GROUP BY date_corrected
 ```
