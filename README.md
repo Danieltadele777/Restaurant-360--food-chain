@@ -30,9 +30,9 @@ The data source used for this analysis is provided by the bootcamp provider. The
 
 ### [Tools Used]()
 - Google BigQuery: Primary data cleaning
-- SQL: For data claning and transformation
+- SQL: For data cleaning and transformation
 - Panda: For data cleaning, inspection and analysis
-- Power BI: Visualization
+- Power BI: Visualization, DAX, Measures
 
 ### [Data cleaning]()
 To clean the data we performed the following tasks:
