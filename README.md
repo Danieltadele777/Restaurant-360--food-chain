@@ -1,51 +1,48 @@
-### Restaurant-360
+### Online Restaurant Chain Analysis
 
-Conducted an in-depth analysis of Restaurant 360, comprising 21 stores. The analysis will encompass 3,924,748 orders spanning from 2015 to 2020. Four primary datasets will be utilized: Order Data, Orderline, Payment Data, and ID Store.
+Conducted an in-depth analysis of an online restaurant chain, comprising 21 stores all over Paris. The analysis will encompass 3,924,748 orders spanning from 2015 to 2020. Four primary datasets will be utilized: Order Data, Orderline, Payment Data, and ID Store.
 ## Table of contents
  - [Project Overview](#project-overview)
- - [Data Source](#data-source)
+ - [Power BI dashboard](#power-bi-dashboard)
  - [Tools Used](#tools-used)
  - [Data cleaning](#data-cleaning)
  - [Exploratory data analysis](#exploratory-data-analysis)
  - [Hypothesis Testing](#hypothesis-testing)
- - [Data Analysis](#data-analysis)
  - [Findings](#findings)
  - [Recommendations](#recommendations)
- - [Limitations](#limitations)
- - [References](#references)
+
 
 ### [Project Overview]()
 
 The aim of this analysis is to extract valuable insights and trends regarding customer behavior, sales performance, and store operations over the specified timeframe.
 
-[CLICK ME to access presnetation video and Power BI dashboards](https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards.git)
+### [Power BI dashboard]()
 
-<img width="1239" alt="Global" src="https://github.com/Danieltadele777/Restaurant-360--food-chain/assets/147874875/5bfd2652-d897-4a8f-9816-9ef9f20b511d">
-
-
-
-### [Data Source]()
-
-The data source used for this analysis is provided by the bootcamp provider. The school also provided detailed information about join keys and data schemas. 
+<img width="1239" alt="Global" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/5991dc1a-59e0-4ab4-a2c2-b91d9be98bb6">
+<img width="1236" alt="Revenue" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/a174623f-3eb0-4ce5-ac13-7657c5f7f7d3">
+<img width="1238" alt="category" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/541c97a4-4b17-4a00-8c32-26e5f3e3f686">
+<img width="1242" alt="store" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/b50c1bf3-9710-467f-bfab-3d8b46e69f71">
+<img width="1235" alt="item" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/4daa5751-ce1c-448e-b4a8-a3b6fc071b14">
+<img width="1248" alt="Paired items" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/a6111915-919a-4b8e-b392-d40c57fbed8a">
 
 ### [Tools Used]()
-- Google BigQuery: Primary data cleaning
+- Google BigQuery, PostgreSQL
 - SQL: For data cleaning and transformation
-- Panda: For data cleaning, inspection and analysis
+- Python, Panda: For data cleaning, inspection, and analysis
 - Power BI: Visualization, DAX, Measures
 
 ### [Data cleaning]()
-To clean the data we performed the following tasks:
-- Reading the SCHEMA, data dictionary and understanding of the Details of the data
+To clean the data I performed the following tasks:
+- Reading the SCHEMA, data dictionary and understanding the Details of the data
 - Handling null values and understanding the columns
 - Handling missing values and duplicates
-- Data cleaning, formatting and also dates and numbers adjustment
+- Data cleaning, formatting, and also dates and numbers adjustment
 
 ### [Exploratory Data analysis]()
 - What is the overall sales trend?
 - Which products are top sellers?
 - What are the peak sales periods?
-- Which products sold in high quantity?
+- Which products are sold in high quantities?
 - Which seller sold the most?
 - Which products received low reviews?
 - Which products received high reviews?
@@ -53,38 +50,13 @@ To clean the data we performed the following tasks:
 - What is the seasonality of orders?
 
 ### [Hypothesis Testing]()
-- The number of sales higher in weekends than during the weekday
+- The number of sales is higher on weekends than during the weekday
 - More number of tables in the store means bigger turnover
-- Bigger the restaurant (number of tables) better the time efficiency
+- The bigger the restaurant (number of tables) better the time efficiency
 - Average price is higher in stores closest to the city center
 - More number of orders means higher turnover
 - Store with more time efficiency sell more
-- When higher the average price in the store bigger the turnover
-
-### [Data Analysis]()
- - [Click here to see the SQL codes](https://github.com/Danieltadele777/Restaurant-360--food-chain/blob/main/SQL%20codes)
- - [Click here to see the Python codes]()
-
-Some of SQL codes used:
-```SQL
-SELECT
-    CASE
-        WHEN date_opened BETWEEN "2015-01-01" AND "2015-12-31" THEN "2015-01-01"
-        WHEN date_opened BETWEEN "2016-01-01" AND "2016-12-31" THEN "2016-01-01"
-        WHEN date_opened BETWEEN "2017-01-01" AND "2017-12-31" THEN "2017-01-01"
-        WHEN date_opened BETWEEN "2018-01-01" AND "2018-12-31" THEN "2018-01-01"
-        WHEN date_opened BETWEEN "2019-01-01" AND "2019-12-31" THEN "2019-01-01"
-        WHEN date_opened BETWEEN "2020-01-01" AND "2020-12-31" THEN "2020-01-01"
-        ELSE "2020-01-01"
-    END AS date_corrected
-    , SUM(m_cached_payed) AS total_payed
-    , SUM(customer) AS total_customers
-    , ROUND(SUM(m_cached_payed) / NULLIF(SUM(customer), 0), 2) AS ticket_medium
-FROM `avid-infinity-402410.Tiller_by_sumup.JOIN_payment_orderdata`
-GROUP BY date_corrected
-```
-
-
+- When higher the average price in the store, the bigger the turnover
 
 ### [Findings]()
 The analysis results are summarized as follows:
@@ -102,11 +74,3 @@ Based on the analysis we recommended the following actions:
 - Given that certain stores, such as 4151, are generating a significant amount of revenue, it may be necessary to study this store to understand the factors contributing to its performance
 - It may be necessary to identify the top sellers or recognize their contributions
 - Some stores sold fewer items. It may be necessary to determine the reasons and review the process
-
-### [Limitations]()
-
-- We had to remove all null and duplicated values from the columns because they would have affected the accuracy of our analysis 
-- In addition to that, we faced ambigious coloumn so we used our assumption to analyse the coloumn. Because of the limitations of the data provided, We weren't able to take further steps
-
-### [References]()
-1. [Stack Overflow](www.stackoverflow.com)
