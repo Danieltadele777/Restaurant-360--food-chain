@@ -17,13 +17,14 @@ Conducted an in-depth analysis of an online restaurant chain, comprising 21 stor
 The aim of this analysis is to extract valuable insights and trends regarding customer behavior, sales performance, and store operations over the specified timeframe.
 
 ### [Power BI dashboard]()
+<img width="1241" alt="Screenshot 2025-01-06 at 23 28 14" src="https://github.com/user-attachments/assets/345832c6-4476-4f7d-881e-980f06b6c7fd" />
+<img width="1242" alt="Screenshot 2025-01-06 at 23 29 24" src="https://github.com/user-attachments/assets/75788bd7-543b-4a29-98e2-f09db4d4e746" />
+<img width="1243" alt="Screenshot 2025-01-06 at 23 29 50" src="https://github.com/user-attachments/assets/97a8c764-1eeb-4c7e-9fc6-ecb3bd0fac37" />
+<img width="1245" alt="Screenshot 2025-01-06 at 23 30 21" src="https://github.com/user-attachments/assets/2b019466-7350-4306-8664-0a16cbfa5933" />
+<img width="1243" alt="Screenshot 2025-01-06 at 23 31 05" src="https://github.com/user-attachments/assets/5de341a7-636f-4ce5-88c8-b35a9677e935" />
+<img width="1242" alt="Screenshot 2025-01-06 at 23 31 29" src="https://github.com/user-attachments/assets/5186d6c6-8b39-4e00-911d-6be9a4019f9a" />
 
-<img width="1239" alt="Global" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/5991dc1a-59e0-4ab4-a2c2-b91d9be98bb6">
-<img width="1236" alt="Revenue" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/a174623f-3eb0-4ce5-ac13-7657c5f7f7d3">
-<img width="1238" alt="category" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/541c97a4-4b17-4a00-8c32-26e5f3e3f686">
-<img width="1242" alt="store" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/b50c1bf3-9710-467f-bfab-3d8b46e69f71">
-<img width="1235" alt="item" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/4daa5751-ce1c-448e-b4a8-a3b6fc071b14">
-<img width="1248" alt="Paired items" src="https://github.com/Danieltadele777/Restaurant-360-Video-presentation-and-dashboards/assets/147874875/a6111915-919a-4b8e-b392-d40c57fbed8a">
+
 
 ### [Tools Used]()
 - Google BigQuery, PostgreSQL
